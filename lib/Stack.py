@@ -1,16 +1,20 @@
 class Stack:
 
     def __init__(self, items = [], limit = 100):
-        pass
+        self.items = items
 
     def isEmpty(self):
         pass
 
     def push(self, item):
-        pass
+        # push 0 to stack
+        # can't push to list
+        stk = self.items
+        stk.append(0)
+        return stk
 
     def pop(self):
-        pass
+        
 
     def peek(self):
         pass
