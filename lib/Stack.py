@@ -1,29 +1,36 @@
 class Stack:
 
-    def __init__(self, items = [], limit = 100):
-        self.items = items
+    def __init__(self, items = None, limit = 100):
+        if items is None:
+            self.items = []
+        else:
+            self.items = list(items)  # Create a new list based on the input to avoid reference issues
+        self.limit = limit
+
 
     def isEmpty(self):
-        pass
+        return len(self.items) == 0
 
     def push(self, item):
-        # push 0 to stack
-        # can't push to list
-        stk = self.items
-        stk.append(0)
-        return stk
+        if not self.full():
+            self.items.append(item)
+        else:
+            # Handle the full stack case, e.g., by raising an exception or ignoring the push
+            print("Stack is full. Cannot add more items.")
 
     def pop(self):
-        
+        if self.isEmpty():
+            return None
+        return self.items.pop()
 
     def peek(self):
         pass
     
     def size(self):
-        pass
+        return len(self.items)
 
     def full(self):
-        pass
+        return len(self.items) == self.limit
 
     def search(self, target):
         pass
