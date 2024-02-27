@@ -7,7 +7,6 @@ class Stack:
             self.items = list(items)  # Create a new list based on the input to avoid reference issues
         self.limit = limit
 
-
     def isEmpty(self):
         return len(self.items) == 0
 
@@ -33,4 +32,8 @@ class Stack:
         return len(self.items) == self.limit
 
     def search(self, target):
-        pass
+        top_of_stack = self.items[-1]
+        if target in self.items:
+            return top_of_stack - target
+        else:
+            return -1

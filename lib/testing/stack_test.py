@@ -43,7 +43,6 @@ class TestStack:
         assert(stk.size() == 1)
         assert(stk.pop() == 1)
 
-
     def test_full(self):
         '''Test Stack full() method'''
         stk = Stack([1], 1)
